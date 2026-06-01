@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PRWZPRK4');</script>
+  <!-- Google Tag Manager (lazy) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    var _gtmLoaded = false;
+    function _loadGTM() {
+      if (_gtmLoaded) return; _gtmLoaded = true;
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PRWZPRK4');
+    }
+    ['scroll','click','touchstart','keydown'].forEach(function(e){window.addEventListener(e,_loadGTM,{once:true,passive:true});});
+    setTimeout(_loadGTM, 4000);
+  </script>
   <!-- End Google Tag Manager -->
   <title>Vet Yayá | Hospital Veterinário 24h em Guarulhos/SP</title>
   <meta name="description" content="Hospital Veterinário 24h em Guarulhos. Emergências, cirurgias, laboratório próprio, raio-x, ultrassom e internação. Atendimento imediato para seu pet." />
@@ -728,7 +737,7 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="logo.jpg" alt="Vet Yayá" class="nav-logo-img" />
+      <img src="logo.jpg" alt="Vet Yayá" class="nav-logo-img" width="44" height="44" />
       <span class="nav-nome">Vet Yayá</span>
       <span class="nav-badge">Hospital Veterinário 24h</span>
     </a>
@@ -741,12 +750,12 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
-      <img src="clinica1.webp" alt="" fetchpriority="high" decoding="sync" />
+      <img src="clinica1.webp" alt="" fetchpriority="high" decoding="sync" width="1920" height="1080" />
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-logo-wrap">
-        <img src="logo.jpg" alt="Vet Yayá" class="hero-logo" />
+        <img src="logo.jpg" alt="Vet Yayá" class="hero-logo" width="112" height="112" />
       </div>
       <p class="hero-clinica-nome">Vet Yayá</p>
       <h1>Hospital Veterinário <span>24h</span></h1>
@@ -783,14 +792,44 @@
     </div>
   </div>
 
-  <!-- GALERIA -->
-  <div class="galeria-secao">
-    <div class="galeria-secao-inner">
-      <span class="sec-tag">Nossa Estrutura</span>
-      <h2 class="sec-titulo">Um hospital pensado <span>para eles</span></h2>
-      <p class="sec-sub" style="margin-bottom:0;">Estrutura completa com todo equipamento necessário para cuidar bem do seu pet, 24 horas por dia.</p>
-      <div class="galeria-wrapper">
-        <img src="clinica1.webp" alt="Vet Yayá - Estrutura" class="galeria-slide ativo" />
+  <!-- DEPOIMENTOS -->
+  <div class="sec-depoi">
+    <div class="sec-depoi-inner">
+      <span class="sec-tag">O que dizem sobre nós</span>
+      <h2 class="sec-titulo" style="font-size:32px;">Guarulhos <span style="color:var(--vermelho);">confia na Vet Yayá</span></h2>
+      <div class="carrossel-wrap">
+        <div class="carrossel-track" id="carrosselTrack">
+          <div class="carrossel-slide">
+            <div class="review-card">
+              <img src="1.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" width="400" height="680" />
+            </div>
+          </div>
+          <div class="carrossel-slide">
+            <div class="review-card">
+              <img src="2.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" width="400" height="680" />
+            </div>
+          </div>
+          <div class="carrossel-slide">
+            <div class="review-card">
+              <img src="3.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" width="400" height="680" />
+            </div>
+          </div>
+          <div class="carrossel-slide">
+            <div class="review-card">
+              <img src="4.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" width="400" height="680" />
+            </div>
+          </div>
+        </div>
+        <div class="carrossel-nav">
+          <button class="carrossel-btn" onclick="moverCarrossel(-1)" aria-label="Anterior">&#8592;</button>
+          <div class="carrossel-dots">
+            <div class="carrossel-dot ativo" onclick="irParaSlide(0)"></div>
+            <div class="carrossel-dot" onclick="irParaSlide(1)"></div>
+            <div class="carrossel-dot" onclick="irParaSlide(2)"></div>
+            <div class="carrossel-dot" onclick="irParaSlide(3)"></div>
+          </div>
+          <button class="carrossel-btn" onclick="moverCarrossel(1)" aria-label="Próximo">&#8594;</button>
+        </div>
       </div>
     </div>
   </div>
@@ -887,44 +926,14 @@
     </div>
   </div>
 
-  <!-- DEPOIMENTOS -->
-  <div class="sec-depoi">
-    <div class="sec-depoi-inner">
-      <span class="sec-tag">O que dizem sobre nós</span>
-      <h2 class="sec-titulo" style="font-size:32px;">Guarulhos <span style="color:var(--vermelho);">confia na Vet Yayá</span></h2>
-      <div class="carrossel-wrap">
-        <div class="carrossel-track" id="carrosselTrack">
-          <div class="carrossel-slide">
-            <div class="review-card">
-              <img src="1.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" />
-            </div>
-          </div>
-          <div class="carrossel-slide">
-            <div class="review-card">
-              <img src="2.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" />
-            </div>
-          </div>
-          <div class="carrossel-slide">
-            <div class="review-card">
-              <img src="3.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" />
-            </div>
-          </div>
-          <div class="carrossel-slide">
-            <div class="review-card">
-              <img src="4.webp" alt="Avaliação 5 estrelas — Vet Yayá" loading="lazy" />
-            </div>
-          </div>
-        </div>
-        <div class="carrossel-nav">
-          <button class="carrossel-btn" onclick="moverCarrossel(-1)" aria-label="Anterior">&#8592;</button>
-          <div class="carrossel-dots">
-            <div class="carrossel-dot ativo" onclick="irParaSlide(0)"></div>
-            <div class="carrossel-dot" onclick="irParaSlide(1)"></div>
-            <div class="carrossel-dot" onclick="irParaSlide(2)"></div>
-            <div class="carrossel-dot" onclick="irParaSlide(3)"></div>
-          </div>
-          <button class="carrossel-btn" onclick="moverCarrossel(1)" aria-label="Próximo">&#8594;</button>
-        </div>
+  <!-- GALERIA -->
+  <div class="galeria-secao">
+    <div class="galeria-secao-inner">
+      <span class="sec-tag">Nossa Estrutura</span>
+      <h2 class="sec-titulo">Um hospital pensado <span>para eles</span></h2>
+      <p class="sec-sub" style="margin-bottom:0;">Estrutura completa com todo equipamento necessário para cuidar bem do seu pet, 24 horas por dia.</p>
+      <div class="galeria-wrapper">
+        <img src="clinica1.webp" alt="Vet Yayá - Estrutura" class="galeria-slide ativo" width="820" height="615" />
       </div>
     </div>
   </div>
@@ -972,7 +981,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="logo.jpg" alt="Vet Yayá" class="footer-logo" />
+    <img src="logo.jpg" alt="Vet Yayá" class="footer-logo" width="100" height="38" />
     <div class="footer-texto">
       <strong>Vet Yayá — Hospital Veterinário 24h</strong> · Alameda Yayá, 1007 — Guarulhos/SP<br />
       Cuidado de verdade. Para o pet que você ama.
